@@ -2,6 +2,7 @@ on:
   push:
     branches:
     - main
+
   jobs:
     build-and-push-image:
     name: build and push image to container registry

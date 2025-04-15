@@ -9,3 +9,7 @@ on:
     steps:
       - name: check list file
         run: ls -la
+      - name: clone repository
+        run: actions/checkout@v4
+      - name: check list file
+        run: ls -la

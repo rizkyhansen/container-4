@@ -13,7 +13,7 @@ func main() {
       		"code" : 200,
 			"language" : "go version go1.24.2",
 			"message" : "Server running on port 8000",
-      "description" : "aplikasi ini sudah berjalan dan terima kasih"
+      "description" : "aplikasi ini sudah berjalan dan terima kasih",
     })
   })
   r.Run("0.0.0.0:8000") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")

@@ -5,12 +5,12 @@ on:
 
 jobs:
   build-and-push-image:
-  name: build and push image to container registry
-  runs-on: ubuntu-22.04
-  steps:
-    - name: check list file
-      run: ls -la
-    - name: clone repository
-      uses: actions/checkout@v4
-    - name: check list file
-      run: ls -la
+    name: build and push image to container registry
+    runs-on: ubuntu-22.04
+    steps:
+      - name: check list file
+        run: ls -la
+      - name: clone repository
+        uses: actions/checkout@v4
+      - name: check list file
+        run: ls -la

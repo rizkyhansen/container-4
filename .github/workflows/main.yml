@@ -31,8 +31,8 @@ jobs:
     needs:
     - build-and-push-image #ini dulu dikerjain ampe selesai baru lanjut
     steps:
-      - name: check list file
-        run: "test workflow"
+      - name: tes
+        run: echo "test workflow"
       - name: deploy to server
         uses: appleboy/ssh-action@v1
         with:

@@ -39,5 +39,5 @@ jobs:
           host: 34.101.162.215
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22
+          port: 22 #test
           script: whoami

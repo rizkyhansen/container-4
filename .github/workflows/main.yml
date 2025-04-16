@@ -38,7 +38,7 @@ jobs:
         with:
           host: 34.101.89.5 #hostdivm
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_KEY }} #tidak menggunakan password tapi pake key sshs
+          password: ${{ secrets.SSH_KEY }} #tidak menggunakan password tapi pake key ssh
           port: 22
           script: |
             docker login --username rizkyhansen --password ${{ secrets.DOCKERHUB_TOKEN }}

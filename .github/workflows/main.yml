@@ -44,4 +44,4 @@ jobs:
             docker login --username rizkyhansen --password ${{ secrets.DOCKERHUB_TOKEN }}
             docker pull rizkyhansen/app-golang:${{ github.run_number }}
             docker rm -f myapp
-            docker run --name myapp --detach --publish 100:8000 rizkyhansen/app-golang:${{ github.run_number }}
+            docker run --name myapp --detach --publish 80:8000 rizkyhansen/app-golang:${{ github.run_number }}

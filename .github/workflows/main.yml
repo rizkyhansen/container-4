@@ -36,7 +36,7 @@ jobs:
       - name: deploy to server
         uses: appleboy/ssh-action@v1
         with:
-          host: 34.101.89.5 #hostdivm
+          host: 34.101.162.215 #hostdivm
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_KEY }} #tidak menggunakan password tapi pake key ssh
           port: 22

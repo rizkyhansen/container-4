@@ -36,12 +36,8 @@ jobs:
       - name: deploy to server
         uses: appleboy/ssh-action@v1
         with:
-          host: 34.101.162.215 #hostdivm
+          host: 34.101.162.215
           username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }} #tidak menggunakan password tapi pake key sshs
+          key: ${{ secrets.SSH_KEY }}
           port: 22
-          script: |
-            docker login --username rizkyhansen --password ${{ secrets.DOCKERHUB_TOKEN }}
-            docker pull rizkyhansen/app-golang:${{ github.run_number }}
-            docker rm -f myapp
-            docker run --name myapp --detach --publish 100:8000 rizkyhansen/app-golang:${{ github.run_number }}
+          script: whoami

@@ -2,9 +2,6 @@ package main
 
 import (
   "net/http"
-  "os"
-	"strconv"
-	"time"
   "github.com/gin-gonic/gin"
 )
 

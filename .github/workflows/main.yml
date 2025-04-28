@@ -25,23 +25,23 @@ jobs:
           push: true
           tags: rizkyhansen/app-golang:${{ github.run_number }}
   
-  deploy:
-    name: deploy container to server
-    runs-on: ubuntu-22.04
-    needs:
-    - build-and-push-image #ini dulu dikerjain ampe selesai baru lanjuts
-    steps:
-      - name: tes
-        run: echo "test workflow"
-      - name: deploy to server
-        uses: appleboy/ssh-action@v1
-        with:
-          host: 34.101.202.55
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          script: |
-            docker login --username rizkyhansen --password ${{ secrets.DOCKERHUB_TOKEN }}
-            docker pull rizkyhansen/app-golang:${{ github.run_number }}
-            docker rm -f myapp
-            docker run --name myapp --detach --publish 80:8000 rizkyhansen/app-golang:${{ github.run_number }}
+  # deploy:
+  #   name: deploy container to server
+  #   runs-on: ubuntu-22.04
+  #   needs:
+  #   - build-and-push-image #ini dulu dikerjain ampe selesai baru lanjuts
+  #   steps:
+  #     - name: tes
+  #       run: echo "test workflow"
+  #     - name: deploy to server
+  #       uses: appleboy/ssh-action@v1
+  #       with:
+  #         host: 34.101.202.55
+  #         username: ${{ secrets.SSH_USERNAME }}
+  #         key: ${{ secrets.SSH_KEY }}
+  #         port: 22
+  #         script: |
+  #           docker login --username rizkyhansen --password ${{ secrets.DOCKERHUB_TOKEN }}
+  #           docker pull rizkyhansen/app-golang:${{ github.run_number }}
+  #           docker rm -f myapp
+  #           docker run --name myapp --detach --publish 80:8000 rizkyhansen/app-golang:${{ github.run_number }}

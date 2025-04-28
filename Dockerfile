@@ -12,7 +12,7 @@ FROM golang:1.24.2-alpine3.21 AS builder
 WORKDIR /app
 COPY . .
 
-RUN go build -o myapp
+RUN GOARCH=amd64 go build -o myapp
 
 FROM alpine:latest AS release
 

@@ -39,7 +39,7 @@ jobs:
           host: 34.142.189.175
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22 #bisass
+          port: 22
           script: |
             docker login --username rizkyhansen --password ${{ secrets.DOCKERHUB_TOKEN }}
             docker pull rizkyhansen/app-golang:${{ github.run_number }}
